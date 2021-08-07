@@ -1,0 +1,291 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Pallets
+# This file is distributed under the same license as the Click package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Click 8.0.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-07 10:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../click/docs/parameters.rst:2 click.types.Choice click.types.DateTime
+#: click.types.File click.types.FloatRange click.types.IntRange
+#: click.types.Path of
+msgid "Parameters"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:6
+msgid "Click supports two types of parameters for scripts: options and arguments. There is generally some confusion among authors of command line scripts of when to use which, so here is a quick overview of the differences.  As its name indicates, an option is optional.  While arguments can be optional within reason, they are much more restricted in how optional they can be."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:12
+msgid "To help you decide between options and arguments, the recommendation is to use arguments exclusively for things like going to subcommands or input filenames / URLs, and have everything else be an option instead."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:17
+msgid "Differences"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:19
+msgid "Arguments can do less than options.  The following features are only available for options:"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:22
+msgid "automatic prompting for missing input"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:23
+msgid "act as flags (boolean or otherwise)"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:24
+msgid "option values can be pulled from environment variables, arguments can not"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:25
+msgid "options are fully documented in the help page, arguments are not (:ref:`this is intentional <documenting-arguments>` as arguments might be too specific to be automatically documented)"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:29
+msgid "On the other hand arguments, unlike options, can accept an arbitrary number of arguments.  Options can strictly ever only accept a fixed number of arguments (defaults to 1), or they may be specified multiple times using :ref:`multiple-options`."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:35
+msgid "Parameter Types"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:37
+msgid "Parameters can be of different types.  Types can be implemented with different behavior and some are supported out of the box:"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:41
+msgid "``str`` / :data:`click.STRING`:"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:41
+msgid "The default parameter type which indicates unicode strings."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:44
+msgid "``int`` / :data:`click.INT`:"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:44
+msgid "A parameter that only accepts integers."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:47
+msgid "``float`` / :data:`click.FLOAT`:"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:47
+msgid "A parameter that only accepts floating point values."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:53
+msgid "``bool`` / :data:`click.BOOL`:"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:50
+msgid "A parameter that accepts boolean values. This is automatically used for boolean flags. The string values \"1\", \"true\", \"t\", \"yes\", \"y\", and \"on\" convert to ``True``. \"0\", \"false\", \"f\", \"no\", \"n\", and \"off\" convert to ``False``."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:57
+msgid ":data:`click.UUID`:"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:56
+msgid "A parameter that accepts UUID values.  This is not automatically guessed but represented as :class:`uuid.UUID`."
+msgstr ""
+
+#: click.types.File:1 of
+msgid "Declares a parameter to be a file for reading or writing.  The file is automatically closed once the context tears down (after the command finished working)."
+msgstr ""
+
+#: click.types.File:5 of
+msgid "Files can be opened for reading or writing.  The special value ``-`` indicates stdin or stdout depending on the mode."
+msgstr ""
+
+#: click.types.File:8 of
+msgid "By default, the file is opened for reading text data, but it can also be opened in binary mode or for writing.  The encoding parameter can be used to force a specific encoding."
+msgstr ""
+
+#: click.types.File:12 of
+msgid "The `lazy` flag controls if the file should be opened immediately or upon first IO. The default is to be non-lazy for standard input and output streams as well as files opened for reading, `lazy` otherwise. When opening a file lazily for reading, it is still opened temporarily for validation, but will not be held open until first IO. lazy is mainly useful when opening for writing to avoid creating the file until it is needed."
+msgstr ""
+
+#: click.types.File:19 of
+msgid "Starting with Click 2.0, files can also be opened atomically in which case all writes go into a separate file in the same folder and upon completion the file will be moved over to the original location.  This is useful if a file regularly read by other users is modified."
+msgstr ""
+
+#: click.types.File:24 of
+msgid "See :ref:`file-args` for more information."
+msgstr ""
+
+#: click.types.Choice click.types.File click.types.FloatRange
+#: click.types.IntRange of
+msgid "Return type"
+msgstr ""
+
+#: click.types.Path:1 of
+msgid "The path type is similar to the :class:`File` type but it performs different checks.  First of all, instead of returning an open file handle it returns just the filename.  Secondly, it can perform various basic checks about what the file or directory should be."
+msgstr ""
+
+#: click.types.Path:6 of
+msgid "if set to true, the file or directory needs to exist for this value to be valid.  If this is not required and a file does indeed not exist, then all further checks are silently skipped."
+msgstr ""
+
+#: click.types.Path:10 of
+msgid "controls if a file is a possible value."
+msgstr ""
+
+#: click.types.Path:11 of
+msgid "controls if a directory is a possible value."
+msgstr ""
+
+#: click.types.Path:12 of
+msgid "if true, a writable check is performed."
+msgstr ""
+
+#: click.types.Path:13 of
+msgid "if true, a readable check is performed."
+msgstr ""
+
+#: click.types.Path:14 of
+msgid "if this is true, then the path is fully resolved before the value is passed onwards.  This means that it's absolute and symlinks are resolved.  It will not expand a tilde-prefix, as this is supposed to be done by the shell only."
+msgstr ""
+
+#: click.types.Path:19 of
+msgid "If this is set to `True`, a single dash to indicate standard streams is permitted."
+msgstr ""
+
+#: click.types.Path:21 of
+msgid "Convert the incoming path value to this type. If ``None``, keep Python's default, which is ``str``. Useful to convert to :class:`pathlib.Path`."
+msgstr ""
+
+#: click.types.Path:25 of
+msgid "Allow passing ``type=pathlib.Path``."
+msgstr ""
+
+#: click.types.Path:28 of
+msgid "Added the ``allow_dash`` parameter."
+msgstr ""
+
+#: click.types.Choice:1 of
+msgid "The choice type allows a value to be checked against a fixed set of supported values. All of these values have to be strings."
+msgstr ""
+
+#: click.types.Choice:4 of
+msgid "You should only pass a list or tuple of choices. Other iterables (like generators) may lead to surprising results."
+msgstr ""
+
+#: click.types.Choice:7 of
+msgid "The resulting value will always be one of the originally passed choices regardless of ``case_sensitive`` or any ``ctx.token_normalize_func`` being specified."
+msgstr ""
+
+#: click.types.Choice:11 of
+msgid "See :ref:`choice-opts` for an example."
+msgstr ""
+
+#: click.types.Choice:13 of
+msgid "Set to false to make choices case insensitive. Defaults to true."
+msgstr ""
+
+#: click.types.IntRange:1 of
+msgid "Restrict an :data:`click.INT` value to a range of accepted values. See :ref:`ranges`."
+msgstr ""
+
+#: click.types.FloatRange:4 click.types.IntRange:4 of
+msgid "If ``min`` or ``max`` are not passed, any value is accepted in that direction. If ``min_open`` or ``max_open`` are enabled, the corresponding boundary is not included in the range."
+msgstr ""
+
+#: click.types.IntRange:8 of
+msgid "If ``clamp`` is enabled, a value outside the range is clamped to the boundary instead of failing."
+msgstr ""
+
+#: click.types.FloatRange:12 click.types.IntRange:11 of
+msgid "Added the ``min_open`` and ``max_open`` parameters."
+msgstr ""
+
+#: click.types.FloatRange:1 of
+msgid "Restrict a :data:`click.FLOAT` value to a range of accepted values. See :ref:`ranges`."
+msgstr ""
+
+#: click.types.FloatRange:8 of
+msgid "If ``clamp`` is enabled, a value outside the range is clamped to the boundary instead of failing. This is not supported if either boundary is marked ``open``."
+msgstr ""
+
+#: click.types.DateTime:1 of
+msgid "The DateTime type converts date strings into `datetime` objects."
+msgstr ""
+
+#: click.types.DateTime:3 of
+msgid "The format strings which are checked are configurable, but default to some common (non-timezone aware) ISO 8601 formats."
+msgstr ""
+
+#: click.types.DateTime:6 of
+msgid "When specifying *DateTime* formats, you should only pass a list or a tuple. Other iterables, like generators, may lead to surprising results."
+msgstr ""
+
+#: click.types.DateTime:9 of
+msgid "The format strings are processed using ``datetime.strptime``, and this consequently defines the format strings which are allowed."
+msgstr ""
+
+#: click.types.DateTime:12 of
+msgid "Parsing is tried using each format, in order, and the first format which parses successfully is used."
+msgstr ""
+
+#: click.types.DateTime:15 of
+#, python-format
+msgid "A list or tuple of date format strings, in the order in which they should be tried. Defaults to ``'%Y-%m-%d'``, ``'%Y-%m-%dT%H:%M:%S'``, ``'%Y-%m-%d %H:%M:%S'``."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:77
+msgid "Custom parameter types can be implemented by subclassing :class:`click.ParamType`.  For simple cases, passing a Python function that fails with a `ValueError` is also supported, though discouraged."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:84
+msgid "Parameter Names"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:86
+msgid "Parameters (both options and arguments) have a name that will be used as the Python argument name when calling the decorated function with values."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:90
+msgid "Arguments take only one positional name. To provide a different name for use in help text, see :ref:`doc-meta-variables`."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:93
+msgid "Options can have many names that may be prefixed with one or two dashes. Names with one dash are parsed as short options, names with two are parsed as long options. If a name is not prefixed, it is used as the Python argument name and not parsed as an option name. Otherwise, the first name with a two dash prefix is used, or the first with a one dash prefix if there are none with two. The prefix is removed and dashes are converted to underscores to get the Python argument name."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:103
+msgid "Implementing Custom Types"
+msgstr ""
+
+#: ../../click/docs/parameters.rst:105
+msgid "To implement a custom type, you need to subclass the :class:`ParamType` class. Override the :meth:`~ParamType.convert` method to convert the value from a string to the correct type."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:109
+msgid "The following code implements an integer type that accepts hex and octal numbers in addition to normal integers, and converts them into regular integers."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:135
+msgid "The :attr:`~ParamType.name` attribute is optional and is used for documentation. Call :meth:`~ParamType.fail` if conversion fails. The ``param`` and ``ctx`` arguments may be ``None`` in some cases such as prompts."
+msgstr ""
+
+#: ../../click/docs/parameters.rst:140
+msgid "Values from user input or the command line will be strings, but default values and Python arguments may already be the correct type. The custom type should check at the top if the value is already valid and pass it through to support those cases."
+msgstr ""
+

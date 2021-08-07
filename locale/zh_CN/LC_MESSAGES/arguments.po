@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Pallets
+# This file is distributed under the same license as the Click package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Click 8.0.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-07 10:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../click/docs/arguments.rst:4
+msgid "Arguments"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:8
+msgid "Arguments work similarly to :ref:`options <options>` but are positional. They also only support a subset of the features of options due to their syntactical nature. Click will also not attempt to document arguments for you and wants you to :ref:`document them manually <documenting-arguments>` in order to avoid ugly help pages."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:15
+msgid "Basic Arguments"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:17
+msgid "The most basic option is a simple string argument of one value.  If no type is provided, the type of the default value is used, and if no default value is provided, the type is assumed to be :data:`STRING`."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:21 ../../click/docs/arguments.rst:48
+#: ../../click/docs/arguments.rst:98 ../../click/docs/arguments.rst:137
+msgid "Example:"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:31 ../../click/docs/arguments.rst:60
+msgid "And what it looks like:"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:38
+msgid "Variadic Arguments"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:40
+msgid "The second most common version is variadic arguments where a specific (or unlimited) number of arguments is accepted.  This can be controlled with the ``nargs`` parameter.  If it is set to ``-1``, then an unlimited number of arguments is accepted."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:45
+msgid "The value is then passed as a tuple.  Note that only one argument can be set to ``nargs=-1``, as it will eat up all arguments."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:66
+msgid "Note that this is not how you would write this application.  The reason for this is that in this particular example the arguments are defined as strings.  Filenames, however, are not strings!  They might be on certain operating systems, but not necessarily on all.  For better ways to write this, see the next sections."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:72
+msgid "Note on Non-Empty Variadic Arguments"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:74
+msgid "If you come from ``argparse``, you might be missing support for setting ``nargs`` to ``+`` to indicate that at least one argument is required."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:77
+msgid "This is supported by setting ``required=True``.  However, this should not be used if you can avoid it as we believe scripts should gracefully degrade into becoming noops if a variadic argument is empty.  The reason for this is that very often, scripts are invoked with wildcard inputs from the command line and they should not error out if the wildcard is empty."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:87
+msgid "File Arguments"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:89
+msgid "Since all the examples have already worked with filenames, it makes sense to explain how to deal with files properly.  Command line tools are more fun if they work with files the Unix way, which is to accept ``-`` as a special file that refers to stdin/stdout."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:94
+msgid "Click supports this through the :class:`click.File` type which intelligently handles files for you.  It also deals with Unicode and bytes correctly for all versions of Python so your script stays very portable."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:113 ../../click/docs/arguments.rst:147
+msgid "And what it does:"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:123
+msgid "File Path Arguments"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:125
+msgid "In the previous example, the files were opened immediately.  But what if we just want the filename?  The naïve way is to use the default string argument type.  However, remember that Click is Unicode-based, so the string will always be a Unicode value.  Unfortunately, filenames can be Unicode or bytes depending on which operating system is being used.  As such, the type is insufficient."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:132
+msgid "Instead, you should be using the :class:`Path` type, which automatically handles this ambiguity.  Not only will it return either bytes or Unicode depending on what makes more sense, but it will also be able to do some basic checks for you such as existence checks."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:160
+msgid "File Opening Safety"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:162
+msgid "The :class:`FileType` type has one problem it needs to deal with, and that is to decide when to open a file.  The default behavior is to be \"intelligent\" about it.  What this means is that it will open stdin/stdout and files opened for reading immediately.  This will give the user direct feedback when a file cannot be opened, but it will only open files for writing the first time an IO operation is performed by automatically wrapping the file in a special wrapper."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:170
+msgid "This behavior can be forced by passing ``lazy=True`` or ``lazy=False`` to the constructor.  If the file is opened lazily, it will fail its first IO operation by raising an :exc:`FileError`."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:174
+msgid "Since files opened for writing will typically immediately empty the file, the lazy mode should only be disabled if the developer is absolutely sure that this is intended behavior."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:178
+msgid "Forcing lazy mode is also very useful to avoid resource handling confusion.  If a file is opened in lazy mode, it will receive a ``close_intelligently`` method that can help figure out if the file needs closing or not.  This is not needed for parameters, but is necessary for manually prompting with the :func:`prompt` function as you do not know if a stream like stdout was opened (which was already open before) or a real file that needs closing."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:186
+msgid "Starting with Click 2.0, it is also possible to open files in atomic mode by passing ``atomic=True``.  In atomic mode, all writes go into a separate file in the same folder, and upon completion, the file will be moved over to the original location.  This is useful if a file regularly read by other users is modified."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:193
+msgid "Environment Variables"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:195
+msgid "Like options, arguments can also grab values from an environment variable. Unlike options, however, this is only supported for explicitly named environment variables."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:199 ../../click/docs/arguments.rst:236
+msgid "Example usage:"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:209 ../../click/docs/arguments.rst:247
+#: ../../click/docs/arguments.rst:265
+msgid "And from the command line:"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:218
+msgid "In that case, it can also be a list of different environment variables where the first one is picked."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:221
+msgid "Generally, this feature is not recommended because it can cause the user a lot of confusion."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:225
+msgid "Option-Like Arguments"
+msgstr ""
+
+#: ../../click/docs/arguments.rst:227
+msgid "Sometimes, you want to process arguments that look like options.  For instance, imagine you have a file named ``-foo.txt``.  If you pass this as an argument in this manner, Click will treat it as an option."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:231
+msgid "To solve this, Click does what any POSIX style command line script does, and that is to accept the string ``--`` as a separator for options and arguments.  After the ``--`` marker, all further parameters are accepted as arguments."
+msgstr ""
+
+#: ../../click/docs/arguments.rst:253
+msgid "If you don't like the ``--`` marker, you can set ignore_unknown_options to True to avoid checking unknown options:"
+msgstr ""
+

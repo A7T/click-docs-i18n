@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Pallets
+# This file is distributed under the same license as the Click package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Click 8.0.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-07 10:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../click/docs/testing.rst:2
+msgid "Testing Click Applications"
+msgstr ""
+
+#: ../../click/docs/testing.rst:6
+msgid "For basic testing, Click provides the :mod:`click.testing` module which provides test functionality that helps you invoke command line applications and check their behavior."
+msgstr ""
+
+#: ../../click/docs/testing.rst:10
+msgid "These tools should really only be used for testing as they change the entire interpreter state for simplicity and are not in any way thread-safe!"
+msgstr ""
+
+#: ../../click/docs/testing.rst:15
+msgid "Basic Testing"
+msgstr ""
+
+#: ../../click/docs/testing.rst:17
+msgid "The basic functionality for testing Click applications is the :class:`CliRunner` which can invoke commands as command line scripts.  The :meth:`CliRunner.invoke` method runs the command line script in isolation and captures the output as both bytes and binary data."
+msgstr ""
+
+#: ../../click/docs/testing.rst:22
+msgid "The return value is a :class:`Result` object, which has the captured output data, exit code, and optional exception attached:"
+msgstr ""
+
+#: ../../click/docs/testing.rst:25
+msgid "hello.py"
+msgstr ""
+
+#: ../../click/docs/testing.rst:35
+msgid "test_hello.py"
+msgstr ""
+
+#: ../../click/docs/testing.rst:47
+msgid "For subcommand testing, a subcommand name must be specified in the `args` parameter of :meth:`CliRunner.invoke` method:"
+msgstr ""
+
+#: ../../click/docs/testing.rst:49
+msgid "sync.py"
+msgstr ""
+
+#: ../../click/docs/testing.rst:63
+msgid "test_sync.py"
+msgstr ""
+
+#: ../../click/docs/testing.rst:76
+msgid "Additional keyword arguments passed to ``.invoke()`` will be used to construct the initial Context object. For example, if you want to run your tests against a fixed terminal width you can use the following::"
+msgstr ""
+
+#: ../../click/docs/testing.rst:83
+msgid "File System Isolation"
+msgstr ""
+
+#: ../../click/docs/testing.rst:85
+msgid "For basic command line tools with file system operations, the :meth:`CliRunner.isolated_filesystem` method is useful for setting the current working directory to a new, empty folder."
+msgstr ""
+
+#: ../../click/docs/testing.rst:89
+msgid "cat.py"
+msgstr ""
+
+#: ../../click/docs/testing.rst:99
+msgid "test_cat.py"
+msgstr ""
+
+#: ../../click/docs/testing.rst:115
+msgid "Pass ``temp_dir`` to control where the temporary directory is created. The directory will not be removed by Click in this case. This is useful to integrate with a framework like Pytest that manages temporary files."
+msgstr ""
+
+#: ../../click/docs/testing.rst:129
+msgid "Input Streams"
+msgstr ""
+
+#: ../../click/docs/testing.rst:131
+msgid "The test wrapper can also be used to provide input data for the input stream (stdin).  This is very useful for testing prompts, for instance:"
+msgstr ""
+
+#: ../../click/docs/testing.rst:134
+msgid "prompt.py"
+msgstr ""
+
+#: ../../click/docs/testing.rst:144
+msgid "test_prompt.py"
+msgstr ""
+
+#: ../../click/docs/testing.rst:156
+msgid "Note that prompts will be emulated so that they write the input data to the output stream as well.  If hidden input is expected then this obviously does not happen."
+msgstr ""
+

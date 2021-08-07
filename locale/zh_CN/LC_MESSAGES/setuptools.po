@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Pallets
+# This file is distributed under the same license as the Click package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Click 8.0.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-07 10:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../click/docs/setuptools.rst:4
+msgid "Setuptools Integration"
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:6
+msgid "When writing command line utilities, it's recommended to write them as modules that are distributed with setuptools instead of using Unix shebangs."
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:10
+msgid "Why would you want to do that?  There are a bunch of reasons:"
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:12
+msgid "One of the problems with the traditional approach is that the first module the Python interpreter loads has an incorrect name.  This might sound like a small issue but it has quite significant implications."
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:16
+msgid "The first module is not called by its actual name, but the interpreter renames it to ``__main__``.  While that is a perfectly valid name it means that if another piece of code wants to import from that module it will trigger the import a second time under its real name and all of a sudden your code is imported twice."
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:22
+msgid "Not on all platforms are things that easy to execute.  On Linux and OS X you can add a comment to the beginning of the file (``#!/usr/bin/env python``) and your script works like an executable (assuming it has the executable bit set).  This however does not work on Windows. While on Windows you can associate interpreters with file extensions (like having everything ending in ``.py`` execute through the Python interpreter) you will then run into issues if you want to use the script in a virtualenv."
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:31
+msgid "In fact running a script in a virtualenv is an issue with OS X and Linux as well.  With the traditional approach you need to have the whole virtualenv activated so that the correct Python interpreter is used.  Not very user friendly."
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:36
+msgid "The main trick only works if the script is a Python module.  If your application grows too large and you want to start using a package you will run into issues."
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:41
+msgid "Introduction"
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:43
+msgid "To bundle your script with setuptools, all you need is the script in a Python package and a ``setup.py`` file."
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:46
+msgid "Imagine this directory structure:"
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:53
+msgid "Contents of ``yourscript.py``:"
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:64
+msgid "Contents of ``setup.py``:"
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:84
+msgid "The magic is in the ``entry_points`` parameter.  Below ``console_scripts``, each line identifies one console script.  The first part before the equals sign (``=``) is the name of the script that should be generated, the second part is the import path followed by a colon (``:``) with the Click command."
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:90
+msgid "That's it."
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:93
+msgid "Testing The Script"
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:95
+msgid "To test the script, you can make a new virtualenv and then install your package:"
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:104
+msgid "Afterwards, your command should be available:"
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:111
+msgid "Scripts in Packages"
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:113
+msgid "If your script is growing and you want to switch over to your script being contained in a Python package the changes necessary are minimal.  Let's assume your directory structure changed to this:"
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:129
+msgid "In this case instead of using ``py_modules`` in your ``setup.py`` file you can use ``packages`` and the automatic package finding support of setuptools.  In addition to that it's also recommended to include other package data."
+msgstr ""
+
+#: ../../click/docs/setuptools.rst:134
+msgid "These would be the modified contents of ``setup.py``:"
+msgstr ""
+

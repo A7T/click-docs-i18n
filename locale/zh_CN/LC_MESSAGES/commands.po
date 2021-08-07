@@ -1,0 +1,331 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Pallets
+# This file is distributed under the same license as the Click package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Click 8.0.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-07 10:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../click/docs/commands.rst:2
+msgid "Commands and Groups"
+msgstr ""
+
+#: ../../click/docs/commands.rst:6
+msgid "The most important feature of Click is the concept of arbitrarily nesting command line utilities.  This is implemented through the :class:`Command` and :class:`Group` (actually :class:`MultiCommand`)."
+msgstr ""
+
+#: ../../click/docs/commands.rst:11
+msgid "Callback Invocation"
+msgstr ""
+
+#: ../../click/docs/commands.rst:13
+msgid "For a regular command, the callback is executed whenever the command runs. If the script is the only command, it will always fire (unless a parameter callback prevents it.  This for instance happens if someone passes ``--help`` to the script)."
+msgstr ""
+
+#: ../../click/docs/commands.rst:18
+msgid "For groups and multi commands, the situation looks different.  In this case, the callback fires whenever a subcommand fires (unless this behavior is changed).  What this means in practice is that an outer command runs when an inner command runs:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:34
+msgid "Here is what this looks like:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:43
+msgid "Passing Parameters"
+msgstr ""
+
+#: ../../click/docs/commands.rst:45
+msgid "Click strictly separates parameters between commands and subcommands. What this means is that options and arguments for a specific command have to be specified *after* the command name itself, but *before* any other command names."
+msgstr ""
+
+#: ../../click/docs/commands.rst:49
+msgid "This behavior is already observable with the predefined ``--help`` option. Suppose we have a program called ``tool.py``, containing a subcommand called ``sub``."
+msgstr ""
+
+#: ../../click/docs/commands.rst:53
+msgid "``tool.py --help`` will return the help for the whole program (listing subcommands)."
+msgstr ""
+
+#: ../../click/docs/commands.rst:56
+msgid "``tool.py sub --help`` will return the help for the ``sub`` subcommand."
+msgstr ""
+
+#: ../../click/docs/commands.rst:58
+msgid "But ``tool.py --help sub`` will treat ``--help`` as an argument for the main program. Click then invokes the callback for ``--help``, which prints the help and aborts the program before click can process the subcommand."
+msgstr ""
+
+#: ../../click/docs/commands.rst:63
+msgid "Nested Handling and Contexts"
+msgstr ""
+
+#: ../../click/docs/commands.rst:65
+msgid "As you can see from the earlier example, the basic command group accepts a debug argument which is passed to its callback, but not to the sync command itself.  The sync command only accepts its own arguments."
+msgstr ""
+
+#: ../../click/docs/commands.rst:69
+msgid "This allows tools to act completely independent of each other, but how does one command talk to a nested one?  The answer to this is the :class:`Context`."
+msgstr ""
+
+#: ../../click/docs/commands.rst:73
+msgid "Each time a command is invoked, a new context is created and linked with the parent context.  Normally, you can't see these contexts, but they are there.  Contexts are passed to parameter callbacks together with the value automatically.  Commands can also ask for the context to be passed by marking themselves with the :func:`pass_context` decorator.  In that case, the context is passed as first argument."
+msgstr ""
+
+#: ../../click/docs/commands.rst:80
+msgid "The context can also carry a program specified object that can be used for the program's purposes.  What this means is that you can build a script like this:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:104
+msgid "If the object is provided, each context will pass the object onwards to its children, but at any level a context's object can be overridden.  To reach to a parent, ``context.parent`` can be used."
+msgstr ""
+
+#: ../../click/docs/commands.rst:108
+msgid "In addition to that, instead of passing an object down, nothing stops the application from modifying global state.  For instance, you could just flip a global ``DEBUG`` variable and be done with it."
+msgstr ""
+
+#: ../../click/docs/commands.rst:113
+msgid "Decorating Commands"
+msgstr ""
+
+#: ../../click/docs/commands.rst:115
+msgid "As you have seen in the earlier example, a decorator can change how a command is invoked.  What actually happens behind the scenes is that callbacks are always invoked through the :meth:`Context.invoke` method which automatically invokes a command correctly (by either passing the context or not)."
+msgstr ""
+
+#: ../../click/docs/commands.rst:121
+msgid "This is very useful when you want to write custom decorators.  For instance, a common pattern would be to configure an object representing state and then storing it on the context and then to use a custom decorator to find the most recent object of this sort and pass it as first argument."
+msgstr ""
+
+#: ../../click/docs/commands.rst:127
+msgid "For instance, the :func:`pass_obj` decorator can be implemented like this:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:139
+msgid "The :meth:`Context.invoke` command will automatically invoke the function in the correct way, so the function will either be called with ``f(ctx, obj)`` or ``f(obj)`` depending on whether or not it itself is decorated with :func:`pass_context`."
+msgstr ""
+
+#: ../../click/docs/commands.rst:144
+msgid "This is a very powerful concept that can be used to build very complex nested applications; see :ref:`complex-guide` for more information."
+msgstr ""
+
+#: ../../click/docs/commands.rst:149
+msgid "Group Invocation Without Command"
+msgstr ""
+
+#: ../../click/docs/commands.rst:151
+msgid "By default, a group or multi command is not invoked unless a subcommand is passed.  In fact, not providing a command automatically passes ``--help`` by default.  This behavior can be changed by passing ``invoke_without_command=True`` to a group.  In that case, the callback is always invoked instead of showing the help page.  The context object also includes information about whether or not the invocation would go to a subcommand."
+msgstr ""
+
+#: ../../click/docs/commands.rst:159
+msgid "Example:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:175
+msgid "And how it works in practice:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:185
+msgid "Custom Multi Commands"
+msgstr ""
+
+#: ../../click/docs/commands.rst:187
+msgid "In addition to using :func:`click.group`, you can also build your own custom multi commands.  This is useful when you want to support commands being loaded lazily from plugins."
+msgstr ""
+
+#: ../../click/docs/commands.rst:191
+msgid "A custom multi command just needs to implement a list and load method:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:224
+msgid "These custom classes can also be used with decorators:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:233
+msgid "Merging Multi Commands"
+msgstr ""
+
+#: ../../click/docs/commands.rst:235
+msgid "In addition to implementing custom multi commands, it can also be interesting to merge multiple together into one script.  While this is generally not as recommended as it nests one below the other, the merging approach can be useful in some circumstances for a nicer shell experience."
+msgstr ""
+
+#: ../../click/docs/commands.rst:240
+msgid "The default implementation for such a merging system is the :class:`CommandCollection` class.  It accepts a list of other multi commands and makes the commands available on the same level."
+msgstr ""
+
+#: ../../click/docs/commands.rst:244 ../../click/docs/commands.rst:456
+msgid "Example usage:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:271
+msgid "And what it looks like:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:277
+msgid "In case a command exists in more than one source, the first source wins."
+msgstr ""
+
+#: ../../click/docs/commands.rst:283
+msgid "Multi Command Chaining"
+msgstr ""
+
+#: ../../click/docs/commands.rst:287
+msgid "Sometimes it is useful to be allowed to invoke more than one subcommand in one go.  For instance if you have installed a setuptools package before you might be familiar with the ``setup.py sdist bdist_wheel upload`` command chain which invokes ``sdist`` before ``bdist_wheel`` before ``upload``.  Starting with Click 3.0 this is very simple to implement. All you have to do is to pass ``chain=True`` to your multicommand:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:310
+msgid "Now you can invoke it like this:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:316
+msgid "When using multi command chaining you can only have one command (the last) use ``nargs=-1`` on an argument.  It is also not possible to nest multi commands below chained multicommands.  Other than that there are no restrictions on how they work.  They can accept options and arguments as normal. The order between options and arguments is limited for chained commands. Currently only ``--options argument`` order is allowed."
+msgstr ""
+
+#: ../../click/docs/commands.rst:323
+msgid "Another note: the :attr:`Context.invoked_subcommand` attribute is a bit useless for multi commands as it will give ``'*'`` as value if more than one command is invoked.  This is necessary because the handling of subcommands happens one after another so the exact subcommands that will be handled are not yet available when the callback fires."
+msgstr ""
+
+#: ../../click/docs/commands.rst:331
+msgid "It is currently not possible for chain commands to be nested.  This will be fixed in future versions of Click."
+msgstr ""
+
+#: ../../click/docs/commands.rst:336
+msgid "Multi Command Pipelines"
+msgstr ""
+
+#: ../../click/docs/commands.rst:340
+msgid "A very common usecase of multi command chaining is to have one command process the result of the previous command.  There are various ways in which this can be facilitated.  The most obvious way is to store a value on the context object and process it from function to function.  This works by decorating a function with :func:`pass_context` after which the context object is provided and a subcommand can store its data there."
+msgstr ""
+
+#: ../../click/docs/commands.rst:347
+msgid "Another way to accomplish this is to setup pipelines by returning processing functions.  Think of it like this: when a subcommand gets invoked it processes all of its parameters and comes up with a plan of how to do its processing.  At that point it then returns a processing function and returns."
+msgstr ""
+
+#: ../../click/docs/commands.rst:353
+msgid "Where do the returned functions go?  The chained multicommand can register a callback with :meth:`MultiCommand.result_callback` that goes over all these functions and then invoke them."
+msgstr ""
+
+#: ../../click/docs/commands.rst:357
+msgid "To make this a bit more concrete consider this example:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:395
+msgid "That's a lot in one go, so let's go through it step by step."
+msgstr ""
+
+#: ../../click/docs/commands.rst:397
+msgid "The first thing is to make a :func:`group` that is chainable.  In addition to that we also instruct Click to invoke even if no subcommand is defined.  If this would not be done, then invoking an empty pipeline would produce the help page instead of running the result callbacks."
+msgstr ""
+
+#: ../../click/docs/commands.rst:402
+msgid "The next thing we do is to register a result callback on our group. This callback will be invoked with an argument which is the list of all return values of all subcommands and then the same keyword parameters as our group itself.  This means we can access the input file easily there without having to use the context object."
+msgstr ""
+
+#: ../../click/docs/commands.rst:407
+msgid "In this result callback we create an iterator of all the lines in the input file and then pass this iterator through all the returned callbacks from all subcommands and finally we print all lines to stdout."
+msgstr ""
+
+#: ../../click/docs/commands.rst:412
+msgid "After that point we can register as many subcommands as we want and each subcommand can return a processor function to modify the stream of lines."
+msgstr ""
+
+#: ../../click/docs/commands.rst:415
+msgid "One important thing of note is that Click shuts down the context after each callback has been run.  This means that for instance file types cannot be accessed in the `processor` functions as the files will already be closed there.  This limitation is unlikely to change because it would make resource handling much more complicated.  For such it's recommended to not use the file type and manually open the file through :func:`open_file`."
+msgstr ""
+
+#: ../../click/docs/commands.rst:423
+msgid "For a more complex example that also improves upon handling of the pipelines have a look at the `imagepipe multi command chaining demo <https://github.com/pallets/click/tree/main/examples/imagepipe>`__ in the Click repository.  It implements a pipeline based image editing tool that has a nice internal structure for the pipelines."
+msgstr ""
+
+#: ../../click/docs/commands.rst:431
+msgid "Overriding Defaults"
+msgstr ""
+
+#: ../../click/docs/commands.rst:433
+msgid "By default, the default value for a parameter is pulled from the ``default`` flag that is provided when it's defined, but that's not the only place defaults can be loaded from.  The other place is the :attr:`Context.default_map` (a dictionary) on the context.  This allows defaults to be loaded from a configuration file to override the regular defaults."
+msgstr ""
+
+#: ../../click/docs/commands.rst:440
+msgid "This is useful if you plug in some commands from another package but you're not satisfied with the defaults."
+msgstr ""
+
+#: ../../click/docs/commands.rst:443
+msgid "The default map can be nested arbitrarily for each subcommand:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:452
+msgid "The default map can be provided when the script is invoked, or overridden at any point by commands. For instance, a top-level command could load the defaults from a configuration file."
+msgstr ""
+
+#: ../../click/docs/commands.rst:478
+msgid "And in action:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:489
+msgid "Context Defaults"
+msgstr ""
+
+#: ../../click/docs/commands.rst:493
+msgid "Starting with Click 2.0 you can override defaults for contexts not just when calling your script, but also in the decorator that declares a command.  For instance given the previous example which defines a custom ``default_map`` this can also be accomplished in the decorator now."
+msgstr ""
+
+#: ../../click/docs/commands.rst:498
+msgid "This example does the same as the previous example:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:520
+msgid "And again the example in action:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:528
+msgid "Command Return Values"
+msgstr ""
+
+#: ../../click/docs/commands.rst:532
+msgid "One of the new introductions in Click 3.0 is the full support for return values from command callbacks.  This enables a whole range of features that were previously hard to implement."
+msgstr ""
+
+#: ../../click/docs/commands.rst:536
+msgid "In essence any command callback can now return a value.  This return value is bubbled to certain receivers.  One usecase for this has already been show in the example of :ref:`multi-command-chaining` where it has been demonstrated that chained multi commands can have callbacks that process all return values."
+msgstr ""
+
+#: ../../click/docs/commands.rst:542
+msgid "When working with command return values in Click, this is what you need to know:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:545
+msgid "The return value of a command callback is generally returned from the :meth:`BaseCommand.invoke` method.  The exception to this rule has to do with :class:`Group`\\s:"
+msgstr ""
+
+#: ../../click/docs/commands.rst:549
+msgid "In a group the return value is generally the return value of the subcommand invoked.  The only exception to this rule is that the return value is the return value of the group callback if it's invoked without arguments and `invoke_without_command` is enabled."
+msgstr ""
+
+#: ../../click/docs/commands.rst:553
+msgid "If a group is set up for chaining then the return value is a list of all subcommands' results."
+msgstr ""
+
+#: ../../click/docs/commands.rst:555
+msgid "Return values of groups can be processed through a :attr:`MultiCommand.result_callback`.  This is invoked with the list of all return values in chain mode, or the single return value in case of non chained commands."
+msgstr ""
+
+#: ../../click/docs/commands.rst:560
+msgid "The return value is bubbled through from the :meth:`Context.invoke` and :meth:`Context.forward` methods.  This is useful in situations where you internally want to call into another command."
+msgstr ""
+
+#: ../../click/docs/commands.rst:564
+msgid "Click does not have any hard requirements for the return values and does not use them itself.  This allows return values to be used for custom decorators or workflows (like in the multi command chaining example)."
+msgstr ""
+
+#: ../../click/docs/commands.rst:569
+msgid "When a Click script is invoked as command line application (through :meth:`BaseCommand.main`) the return value is ignored unless the `standalone_mode` is disabled in which case it's bubbled through."
+msgstr ""
+

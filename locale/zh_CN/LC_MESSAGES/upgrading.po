@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Pallets
+# This file is distributed under the same license as the Click package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Click 8.0.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-07 10:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../click/docs/upgrading.rst:2
+msgid "Upgrading To Newer Releases"
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:4
+msgid "Click attempts the highest level of backwards compatibility but sometimes this is not entirely possible.  In case we need to break backwards compatibility this document gives you information about how to upgrade or handle backwards compatibility properly."
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:12
+msgid "Upgrading to 7.0"
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:14
+msgid "Commands that take their name from the decorated function now replace underscores with dashes. For example, the Python function ``run_server`` will get the command name ``run-server`` now. There are a few options to address this:"
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:19
+msgid "To continue with the new behavior, pin your dependency to ``Click>=7`` and update any documentation to use dashes."
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:21
+msgid "To keep existing behavior, add an explicit command name with underscores, like ``@click.command(\"run_server\")``."
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:23
+msgid "To try a name with dashes if the name with underscores was not found, pass a ``token_normalize_func`` to the context:"
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:43
+msgid "Upgrading to 3.2"
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:45
+msgid "Click 3.2 had to perform two changes to multi commands which were triggered by a change between Click 2 and Click 3 that had bigger consequences than anticipated."
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:50
+msgid "Context Invokes"
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:52
+msgid "Click 3.2 contains a fix for the :meth:`Context.invoke` function when used with other commands.  The original intention of this function was to invoke the other command as as if it came from the command line when it was passed a context object instead of a function.  This use was only documented in a single place in the documentation before and there was no proper explanation for the method in the API documentation."
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:59
+msgid "The core issue is that before 3.2 this call worked against intentions::"
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:63
+msgid "This was never intended to work as it does not allow Click to operate on the parameters.  Given that this pattern was never documented and ill intended the decision was made to change this behavior in a bugfix release before it spreads by accident and developers depend on it."
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:68
+msgid "The correct invocation for the above command is the following::"
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:72
+msgid "This also allowed us to fix the issue that defaults were not handled properly by this function."
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:76
+msgid "Multicommand Chaining API"
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:78
+msgid "Click 3 introduced multicommand chaining.  This required a change in how Click internally dispatches.  Unfortunately this change was not correctly implemented and it appeared that it was possible to provide an API that can inform the super command about all the subcommands that will be invoked."
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:84
+msgid "This assumption however does not work with one of the API guarantees that have been given in the past.  As such this functionality has been removed in 3.2 as it was already broken.  Instead the accidentally broken functionality of the :attr:`Context.invoked_subcommand` attribute was restored."
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:90
+msgid "If you do require the know which exact commands will be invoked there are different ways to cope with this.  The first one is to let the subcommands all return functions and then to invoke the functions in a :meth:`Context.result_callback`."
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:99
+msgid "Upgrading to 2.0"
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:101
+msgid "Click 2.0 has one breaking change which is the signature for parameter callbacks.  Before 2.0, the callback was invoked with ``(ctx, value)`` whereas now it's ``(ctx, param, value)``.  This change was necessary as it otherwise made reusing callbacks too complicated."
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:106
+msgid "To ease the transition Click will still accept old callbacks.  Starting with Click 3.0 it will start to issue a warning to stderr to encourage you to upgrade."
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:110
+msgid "In case you want to support both Click 1.0 and Click 2.0, you can make a simple decorator that adjusts the signatures::"
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:123
+msgid "With that helper you can then write something like this::"
+msgstr ""
+
+#: ../../click/docs/upgrading.rst:129
+msgid "Note that because Click 1.0 did not pass a parameter, the `param` argument here would be `None`, so a compatibility callback could not use that argument."
+msgstr ""
+

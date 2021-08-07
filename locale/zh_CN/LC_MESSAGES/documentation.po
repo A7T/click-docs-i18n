@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Pallets
+# This file is distributed under the same license as the Click package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Click 8.0.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-07 10:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../click/docs/documentation.rst:2
+msgid "Documenting Scripts"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:6
+msgid "Click makes it very easy to document your command line tools.  First of all, it automatically generates help pages for you.  While these are currently not customizable in terms of their layout, all of the text can be changed."
+msgstr ""
+
+#: ../../click/docs/documentation.rst:12
+msgid "Help Texts"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:14
+msgid "Commands and options accept help arguments.  In the case of commands, the docstring of the function is automatically used if provided."
+msgstr ""
+
+#: ../../click/docs/documentation.rst:17
+msgid "Simple example:"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:29 ../../click/docs/documentation.rst:56
+#: ../../click/docs/documentation.rst:75 ../../click/docs/documentation.rst:117
+#: ../../click/docs/documentation.rst:152
+#: ../../click/docs/documentation.rst:206
+#: ../../click/docs/documentation.rst:237
+msgid "And what it looks like:"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:39
+msgid "Documenting Arguments"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:41
+msgid ":func:`click.argument` does not take a ``help`` parameter. This is to follow the general convention of Unix tools of using arguments for only the most necessary things, and to document them in the command help text by referring to them by name."
+msgstr ""
+
+#: ../../click/docs/documentation.rst:46
+msgid "You might prefer to reference the argument in the description:"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:62
+msgid "Or you might prefer to explicitly provide a description of the argument:"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:81
+msgid "For more examples, see the examples in :doc:`/arguments`."
+msgstr ""
+
+#: ../../click/docs/documentation.rst:85
+msgid "Preventing Rewrapping"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:87
+msgid "The default behavior of Click is to rewrap text based on the width of the terminal.  In some circumstances, this can become a problem. The main issue is when showing code examples, where newlines are significant."
+msgstr ""
+
+#: ../../click/docs/documentation.rst:91
+msgid "Rewrapping can be disabled on a per-paragraph basis by adding a line with solely the ``\\b`` escape marker in it.  This line will be removed from the help text and rewrapping will be disabled."
+msgstr ""
+
+#: ../../click/docs/documentation.rst:95 ../../click/docs/documentation.rst:135
+#: ../../click/docs/documentation.rst:178
+msgid "Example:"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:126
+msgid "Truncating Help Texts"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:128
+msgid "Click gets command help text from function docstrings.  However if you already use docstrings to document function arguments you may not want to see :param: and :return: lines in your help text."
+msgstr ""
+
+#: ../../click/docs/documentation.rst:132
+msgid "You can use the ``\\f`` escape marker to have Click truncate the help text after the marker."
+msgstr ""
+
+#: ../../click/docs/documentation.rst:160
+msgid "Meta Variables"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:162
+msgid "Options and parameters accept a ``metavar`` argument that can change the meta variable in the help page.  The default version is the parameter name in uppercase with underscores, but can be annotated differently if desired.  This can be customized at all levels:"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:186
+msgid "Command Short Help"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:188
+msgid "For commands, a short help snippet is generated.  By default, it's the first sentence of the help message of the command, unless it's too long.  This can also be overridden:"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:214
+msgid "Help Parameter Customization"
+msgstr ""
+
+#: ../../click/docs/documentation.rst:218
+msgid "The help parameter is implemented in Click in a very special manner. Unlike regular parameters it's automatically added by Click for any command and it performs automatic conflict resolution.  By default it's called ``--help``, but this can be changed.  If a command itself implements a parameter with the same name, the default help parameter stops accepting it.  There is a context setting that can be used to override the names of the help parameters called :attr:`~Context.help_option_names`."
+msgstr ""
+
+#: ../../click/docs/documentation.rst:226
+msgid "This example changes the default parameters to ``-h`` and ``--help`` instead of just ``--help``:"
+msgstr ""
+
