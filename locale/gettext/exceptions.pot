@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Pallets
+# This file is distributed under the same license as the Click package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Click 8.0.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-07 10:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../click/docs/exceptions.rst:2
+msgid "Exception Handling"
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:6
+msgid "Click internally uses exceptions to signal various error conditions that the user of the application might have caused.  Primarily this is things like incorrect usage."
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:11
+msgid "Where are Errors Handled?"
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:13
+msgid "Click's main error handling is happening in :meth:`BaseCommand.main`.  In there it handles all subclasses of :exc:`ClickException` as well as the standard :exc:`EOFError` and :exc:`KeyboardInterrupt` exceptions.  The latter are internally translated into a :exc:`Abort`."
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:18
+msgid "The logic applied is the following:"
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:20
+msgid "If an :exc:`EOFError` or :exc:`KeyboardInterrupt` happens, reraise it as :exc:`Abort`."
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:22
+msgid "If an :exc:`ClickException` is raised, invoke the :meth:`ClickException.show` method on it to display it and then exit the program with :attr:`ClickException.exit_code`."
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:25
+msgid "If an :exc:`Abort` exception is raised print the string ``Aborted!`` to standard error and exit the program with exit code ``1``."
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:27
+msgid "if it goes through well, exit the program with exit code ``0``."
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:30
+msgid "What if I don't want that?"
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:32
+msgid "Generally you always have the option to invoke the :meth:`invoke` method yourself.  For instance if you have a :class:`Command` you can invoke it manually like this::"
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:40
+msgid "In this case exceptions will not be handled at all and bubbled up as you would expect."
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:43
+msgid "Starting with Click 3.0 you can also use the :meth:`Command.main` method but disable the standalone mode which will do two things: disable exception handling and disable the implicit :meth:`sys.exit` at the end."
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:47
+msgid "So you can do something like this::"
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:53
+msgid "Which Exceptions Exist?"
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:55
+msgid "Click has two exception bases: :exc:`ClickException` which is raised for all exceptions that Click wants to signal to the user and :exc:`Abort` which is used to instruct Click to abort the execution."
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:59
+msgid "A :exc:`ClickException` has a :meth:`~ClickException.show` method which can render an error message to stderr or the given file object.  If you want to use the exception yourself for doing something check the API docs about what else they provide."
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:64
+msgid "The following common subclasses exist:"
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:66
+msgid ":exc:`UsageError` to inform the user that something went wrong."
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:67
+msgid ":exc:`BadParameter` to inform the user that something went wrong with a specific parameter.  These are often handled internally in Click and augmented with extra information if possible.  For instance if those are raised from a callback Click will automatically augment it with the parameter name if possible."
+msgstr ""
+
+#: ../../click/docs/exceptions.rst:72
+msgid ":exc:`FileError` this is an error that is raised by the :exc:`FileType` if Click encounters issues opening the file."
+msgstr ""

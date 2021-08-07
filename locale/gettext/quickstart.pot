@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Pallets
+# This file is distributed under the same license as the Click package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Click 8.0.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-07 10:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../click/docs/quickstart.rst:2
+msgid "Quickstart"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:6
+msgid "You can get the library directly from PyPI::"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:10
+msgid "The installation into a :ref:`virtualenv` is heavily recommended."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:15
+msgid "virtualenv"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:17
+msgid "Virtualenv is probably what you want to use for developing Click applications."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:20
+msgid "What problem does virtualenv solve?  Chances are that you want to use it for other projects besides your Click script.  But the more projects you have, the more likely it is that you will be working with different versions of Python itself, or at least different versions of Python libraries.  Let's face it: quite often libraries break backwards compatibility, and it's unlikely that any serious application will have zero dependencies.  So what do you do if two or more of your projects have conflicting dependencies?"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:29
+msgid "Virtualenv to the rescue!  Virtualenv enables multiple side-by-side installations of Python, one for each project.  It doesn't actually install separate copies of Python, but it does provide a clever way to keep different project environments isolated.  Let's see how virtualenv works."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:35
+msgid "If you are on Mac OS X or Linux::"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:39
+msgid "One of these will probably install virtualenv on your system.  Maybe it's even in your package manager.  If you use Ubuntu, try::"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:44
+msgid "If you are on Windows (or none of the above methods worked) you must install ``pip`` first.  For more information about this, see `installing pip`_. Once you have it installed, run the ``pip`` command from above, but without the `sudo` prefix."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:51
+msgid "Once you have virtualenv installed, just fire up a shell and create your own environment.  I usually create a project folder and a `venv` folder within::"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:61
+msgid "Now, whenever you want to work on a project, you only have to activate the corresponding environment.  On OS X and Linux, do the following::"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:66
+msgid "If you are a Windows user, the following command is for you::"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:70
+msgid "Either way, you should now be using your virtualenv (notice how the prompt of your shell has changed to show the active environment)."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:73
+msgid "And if you want to go back to the real world, use the following command::"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:77
+msgid "After doing this, the prompt of your shell should be as familiar as before."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:79
+msgid "Now, let's move on. Enter the following command to get Click activated in your virtualenv::"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:84
+msgid "A few seconds later and you are good to go."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:87
+msgid "Screencast and Examples"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:89
+msgid "There is a screencast available which shows the basic API of Click and how to build simple applications with it.  It also explores how to build commands with subcommands."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:93
+msgid "`Building Command Line Applications with Click <https://www.youtube.com/watch?v=kNke39OZ2k0>`_"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:96
+msgid "Examples of Click applications can be found in the documentation as well as in the GitHub repository together with readme files:"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:99
+msgid "``inout``: `File input and output <https://github.com/pallets/click/tree/main/examples/inout>`_"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:101
+msgid "``naval``: `Port of docopt naval example <https://github.com/pallets/click/tree/main/examples/naval>`_"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:103
+msgid "``aliases``: `Command alias example <https://github.com/pallets/click/tree/main/examples/aliases>`_"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:105
+msgid "``repo``: `Git-/Mercurial-like command line interface <https://github.com/pallets/click/tree/main/examples/repo>`_"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:107
+msgid "``complex``: `Complex example with plugin loading <https://github.com/pallets/click/tree/main/examples/complex>`_"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:109
+msgid "``validation``: `Custom parameter validation example <https://github.com/pallets/click/tree/main/examples/validation>`_"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:111
+msgid "``colors``: `Color support demo <https://github.com/pallets/click/tree/main/examples/colors>`_"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:113
+msgid "``termui``: `Terminal UI functions demo <https://github.com/pallets/click/tree/main/examples/termui>`_"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:115
+msgid "``imagepipe``: `Multi command chaining demo <https://github.com/pallets/click/tree/main/examples/imagepipe>`_"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:119
+msgid "Basic Concepts - Creating a Command"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:121
+msgid "Click is based on declaring commands through decorators.  Internally, there is a non-decorator interface for advanced use cases, but it's discouraged for high-level usage."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:125
+msgid "A function becomes a Click command line tool by decorating it through :func:`click.command`.  At its simplest, just decorating a function with this decorator will make it into a callable script:"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:137
+msgid "What's happening is that the decorator converts the function into a :class:`Command` which then can be invoked::"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:143
+msgid "And what it looks like:"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:149
+msgid "And the corresponding help page:"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:156
+msgid "Echoing"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:158
+msgid "Why does this example use :func:`echo` instead of the regular :func:`print` function?  The answer to this question is that Click attempts to support different environments consistently and to be very robust even when the environment is misconfigured.  Click wants to be functional at least on a basic level even if everything is completely broken."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:165
+msgid "What this means is that the :func:`echo` function applies some error correction in case the terminal is misconfigured instead of dying with an :exc:`UnicodeError`."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:169
+msgid "The echo function also supports color and other styles in output. It will automatically remove styles if the output stream is a file. On Windows, colorama is automatically installed and used. See :ref:`ansi-colors`."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:174
+msgid "If you don't need this, you can also use the `print()` construct / function."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:178
+msgid "Nesting Commands"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:180
+msgid "Commands can be attached to other commands of type :class:`Group`.  This allows arbitrary nesting of scripts.  As an example here is a script that implements two commands for managing databases:"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:201
+msgid "As you can see, the :func:`group` decorator works like the :func:`command` decorator, but creates a :class:`Group` object instead which can be given multiple subcommands that can be attached with :meth:`Group.add_command`."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:205
+msgid "For simple scripts, it's also possible to automatically attach and create a command by using the :meth:`Group.command` decorator instead.  The above script can instead be written like this:"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:223
+msgid "You would then invoke the :class:`Group` in your setuptools entry points or other invocations::"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:231
+msgid "Registering Commands Later"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:233
+msgid "Instead of using the ``@group.command()`` decorator, commands can be decorated with the plain ``@click.command()`` decorator and registered with a group later with ``group.add_command()``. This could be used to split commands into multiple Python modules."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:254
+msgid "Adding Parameters"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:256
+msgid "To add parameters, use the :func:`option` and :func:`argument` decorators:"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:267
+msgid "What it looks like:"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:276
+msgid "Switching to Setuptools"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:278
+msgid "In the code you wrote so far there is a block at the end of the file which looks like this: ``if __name__ == '__main__':``.  This is traditionally how a standalone Python file looks like.  With Click you can continue doing that, but there are better ways through setuptools."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:283
+msgid "There are two main (and many more) reasons for this:"
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:285
+msgid "The first one is that setuptools automatically generates executable wrappers for Windows so your command line utilities work on Windows too."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:288
+msgid "The second reason is that setuptools scripts work with virtualenv on Unix without the virtualenv having to be activated.  This is a very useful concept which allows you to bundle your scripts with all requirements into a virtualenv."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:293
+msgid "Click is perfectly equipped to work with that and in fact the rest of the documentation will assume that you are writing applications through setuptools."
+msgstr ""
+
+#: ../../click/docs/quickstart.rst:297
+msgid "I strongly recommend to have a look at the :ref:`setuptools-integration` chapter before reading the rest as the examples assume that you will be using setuptools."
+msgstr ""

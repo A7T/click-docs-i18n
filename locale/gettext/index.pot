@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Pallets
+# This file is distributed under the same license as the Click package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Click 8.0.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-07 10:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../click/docs/index.rst:4
+msgid "Welcome to Click"
+msgstr ""
+
+#: ../../click/docs/index.rst:11
+msgid "Click is a Python package for creating beautiful command line interfaces in a composable way with as little code as necessary.  It's the \"Command Line Interface Creation Kit\".  It's highly configurable but comes with sensible defaults out of the box."
+msgstr ""
+
+#: ../../click/docs/index.rst:16
+msgid "It aims to make the process of writing command line tools quick and fun while also preventing any frustration caused by the inability to implement an intended CLI API."
+msgstr ""
+
+#: ../../click/docs/index.rst:20
+msgid "Click in three points:"
+msgstr ""
+
+#: ../../click/docs/index.rst:22
+msgid "arbitrary nesting of commands"
+msgstr ""
+
+#: ../../click/docs/index.rst:23
+msgid "automatic help page generation"
+msgstr ""
+
+#: ../../click/docs/index.rst:24
+msgid "supports lazy loading of subcommands at runtime"
+msgstr ""
+
+#: ../../click/docs/index.rst:26
+msgid "What does it look like?  Here is an example of a simple Click program:"
+msgstr ""
+
+#: ../../click/docs/index.rst:44
+msgid "And what it looks like when run:"
+msgstr ""
+
+#: ../../click/docs/index.rst:50
+msgid "It automatically generates nicely formatted help pages:"
+msgstr ""
+
+#: ../../click/docs/index.rst:56
+msgid "You can get the library directly from PyPI::"
+msgstr ""
+
+#: ../../click/docs/index.rst:61
+msgid "Documentation"
+msgstr ""
+
+#: ../../click/docs/index.rst:63
+msgid "This part of the documentation guides you through all of the library's usage patterns."
+msgstr ""
+
+#: ../../click/docs/index.rst:88
+msgid "API Reference"
+msgstr ""
+
+#: ../../click/docs/index.rst:90
+msgid "If you are looking for information on a specific function, class, or method, this part of the documentation is for you."
+msgstr ""
+
+#: ../../click/docs/index.rst:99
+msgid "Miscellaneous Pages"
+msgstr ""

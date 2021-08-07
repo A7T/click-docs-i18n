@@ -1,0 +1,274 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Pallets
+# This file is distributed under the same license as the Click package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Click 8.0.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-07 10:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../click/docs/advanced.rst:2
+msgid "Advanced Patterns"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:6
+msgid "In addition to common functionality that is implemented in the library itself, there are countless patterns that can be implemented by extending Click.  This page should give some insight into what can be accomplished."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:13
+msgid "Command Aliases"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:15
+msgid "Many tools support aliases for commands (see `Command alias example <https://github.com/pallets/click/tree/main/examples/aliases>`_). For instance, you can configure ``git`` to accept ``git ci`` as alias for ``git commit``.  Other tools also support auto-discovery for aliases by automatically shortening them."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:21
+msgid "Click does not support this out of the box, but it's very easy to customize the :class:`Group` or any other :class:`MultiCommand` to provide this functionality."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:25
+msgid "As explained in :ref:`custom-multi-commands`, a multi command can provide two methods: :meth:`~MultiCommand.list_commands` and :meth:`~MultiCommand.get_command`.  In this particular case, you only need to override the latter as you generally don't want to enumerate the aliases on the help page in order to avoid confusion."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:31
+msgid "This following example implements a subclass of :class:`Group` that accepts a prefix for a command.  If there were a command called ``push``, it would accept ``pus`` as an alias (so long as it was unique):"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:55
+msgid "And it can then be used like this:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:72
+msgid "Parameter Modifications"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:74
+msgid "Parameters (options and arguments) are forwarded to the command callbacks as you have seen.  One common way to prevent a parameter from being passed to the callback is the `expose_value` argument to a parameter which hides the parameter entirely.  The way this works is that the :class:`Context` object has a :attr:`~Context.params` attribute which is a dictionary of all parameters.  Whatever is in that dictionary is being passed to the callbacks."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:82
+msgid "This can be used to make up addition parameters.  Generally this pattern is not recommended but in some cases it can be useful.  At the very least it's good to know that the system works this way."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:101
+msgid "In this case the callback returns the URL unchanged but also passes a second ``fp`` value to the callback.  What's more recommended is to pass the information in a wrapper however:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:127
+msgid "Token Normalization"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:131
+msgid "Starting with Click 2.0, it's possible to provide a function that is used for normalizing tokens.  Tokens are option names, choice values, or command values.  This can be used to implement case insensitive options, for instance."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:136
+msgid "In order to use this feature, the context needs to be passed a function that performs the normalization of the token.  For instance, you could have a function that converts the token to lowercase:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:149
+msgid "And how it works on the command line:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:156
+msgid "Invoking Other Commands"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:158
+msgid "Sometimes, it might be interesting to invoke one command from another command.  This is a pattern that is generally discouraged with Click, but possible nonetheless.  For this, you can use the :func:`Context.invoke` or :func:`Context.forward` methods."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:163
+msgid "They work similarly, but the difference is that :func:`Context.invoke` merely invokes another command with the arguments you provide as a caller, whereas :func:`Context.forward` fills in the arguments from the current command.  Both accept the command as the first argument and everything else is passed onwards as you would expect."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:169
+msgid "Example:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:187
+#: ../../click/docs/advanced.rst:310
+msgid "And what it looks like:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:197
+msgid "Callback Evaluation Order"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:199
+msgid "Click works a bit differently than some other command line parsers in that it attempts to reconcile the order of arguments as defined by the programmer with the order of arguments as defined by the user before invoking any callbacks."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:204
+msgid "This is an important concept to understand when porting complex patterns to Click from optparse or other systems.  A parameter callback invocation in optparse happens as part of the parsing step, whereas a callback invocation in Click happens after the parsing."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:209
+msgid "The main difference is that in optparse, callbacks are invoked with the raw value as it happens, whereas a callback in Click is invoked after the value has been fully converted."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:213
+msgid "Generally, the order of invocation is driven by the order in which the user provides the arguments to the script; if there is an option called ``--foo`` and an option called ``--bar`` and the user calls it as ``--bar --foo``, then the callback for ``bar`` will fire before the one for ``foo``."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:218
+msgid "There are three exceptions to this rule which are important to know:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:227
+msgid "Eagerness:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:221
+msgid "An option can be set to be \"eager\".  All eager parameters are evaluated before all non-eager parameters, but again in the order as they were provided on the command line by the user."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:225
+msgid "This is important for parameters that execute and exit like ``--help`` and ``--version``.  Both are eager parameters, but whatever parameter comes first on the command line will win and exit the program."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:241
+msgid "Repeated parameters:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:230
+msgid "If an option or argument is split up on the command line into multiple places because it is repeated -- for instance, ``--exclude foo --include baz --exclude bar`` -- the callback will fire based on the position of the first option.  In this case, the callback will fire for ``exclude`` and it will be passed both options (``foo`` and ``bar``), then the callback for ``include`` will fire with ``baz`` only."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:238
+msgid "Note that even if a parameter does not allow multiple versions, Click will still accept the position of the first, but it will ignore every value except the last.  The reason for this is to allow composability through shell aliases that set defaults."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:248
+msgid "Missing parameters:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:244
+msgid "If a parameter is not defined on the command line, the callback will still fire.  This is different from how it works in optparse where undefined values do not fire the callback.  Missing parameters fire their callbacks at the very end which makes it possible for them to default to values from a parameter that came before."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:250
+msgid "Most of the time you do not need to be concerned about any of this, but it is important to know how it works for some advanced cases."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:256
+msgid "Forwarding Unknown Options"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:258
+msgid "In some situations it is interesting to be able to accept all unknown options for further manual processing.  Click can generally do that as of Click 4.0, but it has some limitations that lie in the nature of the problem.  The support for this is provided through a parser flag called ``ignore_unknown_options`` which will instruct the parser to collect all unknown options and to put them to the leftover argument instead of triggering a parsing error."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:266
+msgid "This can generally be activated in two different ways:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:268
+msgid "It can be enabled on custom :class:`Command` subclasses by changing the :attr:`~BaseCommand.ignore_unknown_options` attribute."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:270
+msgid "It can be enabled by changing the attribute of the same name on the context class (:attr:`Context.ignore_unknown_options`).  This is best changed through the ``context_settings`` dictionary on the command."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:274
+msgid "For most situations the easiest solution is the second.  Once the behavior is changed something needs to pick up those leftover options (which at this point are considered arguments).  For this again you have two options:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:279
+msgid "You can use :func:`pass_context` to get the context passed.  This will only work if in addition to :attr:`~Context.ignore_unknown_options` you also set :attr:`~Context.allow_extra_args` as otherwise the command will abort with an error that there are leftover arguments. If you go with this solution, the extra arguments will be collected in :attr:`Context.args`."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:285
+msgid "You can attach a :func:`argument` with ``nargs`` set to `-1` which will eat up all leftover arguments.  In this case it's recommended to set the `type` to :data:`UNPROCESSED` to avoid any string processing on those arguments as otherwise they are forced into unicode strings automatically which is often not what you want."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:291
+msgid "In the end you end up with something like this:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:320
+msgid "As you can see the verbosity flag is handled by Click, everything else ends up in the `timeit_args` variable for further processing which then for instance, allows invoking a subprocess.  There are a few things that are important to know about how this ignoring of unhandled flag happens:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:325
+msgid "Unknown long options are generally ignored and not processed at all. So for instance if ``--foo=bar`` or ``--foo bar`` are passed they generally end up like that.  Note that because the parser cannot know if an option will accept an argument or not, the ``bar`` part might be handled as an argument."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:330
+msgid "Unknown short options might be partially handled and reassembled if necessary.  For instance in the above example there is an option called ``-v`` which enables verbose mode.  If the command would be ignored with ``-va`` then the ``-v`` part would be handled by Click (as it is known) and ``-a`` would end up in the leftover parameters for further processing."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:336
+msgid "Depending on what you plan on doing you might have some success by disabling interspersed arguments (:attr:`~Context.allow_interspersed_args`) which instructs the parser to not allow arguments and options to be mixed.  Depending on your situation this might improve your results."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:342
+msgid "Generally though the combinated handling of options and arguments from your own commands and commands from another application are discouraged and if you can avoid it, you should.  It's a much better idea to have everything below a subcommand be forwarded to another application than to handle some arguments yourself."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:350
+msgid "Global Context Access"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:354
+msgid "Starting with Click 5.0 it is possible to access the current context from anywhere within the same thread through the use of the :func:`get_current_context` function which returns it.  This is primarily useful for accessing the context bound object as well as some flags that are stored on it to customize the runtime behavior.  For instance the :func:`echo` function does this to infer the default value of the `color` flag."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:362
+msgid "Example usage::"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:367
+msgid "It should be noted that this only works within the current thread.  If you spawn additional threads then those threads will not have the ability to refer to the current context.  If you want to give another thread the ability to refer to this context you need to use the context within the thread as a context manager::"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:381
+msgid "Now the thread function can access the context like the main thread would do.  However if you do use this for threading you need to be very careful as the vast majority of the context is not thread safe!  You are only allowed to read from the context, but not to perform any modifications on it."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:389
+msgid "Detecting the Source of a Parameter"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:391
+msgid "In some situations it's helpful to understand whether or not an option or parameter came from the command line, the environment, the default value, or :attr:`Context.default_map`. The :meth:`Context.get_parameter_source` method can be used to find this out. It will return a member of the :class:`~click.core.ParameterSource` enum."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:418
+msgid "Managing Resources"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:420
+msgid "It can be useful to open a resource in a group, to be made available to subcommands. Many types of resources need to be closed or otherwise cleaned up after use. The standard way to do this in Python is by using a context manager with the ``with`` statement."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:425
+msgid "For example, the ``Repo`` class from :doc:`complex` might actually be defined as a context manager:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:442
+msgid "Ordinarily, it would be used with the ``with`` statement:"
+msgstr ""
+
+#: ../../click/docs/advanced.rst:449
+msgid "However, a ``with`` block in a group would exit and close the database before it could be used by a subcommand."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:452
+msgid "Instead, use the context's :meth:`~click.Context.with_resource` method to enter the context manager and return the resource. When the group and any subcommands finish, the context's resources are cleaned up."
+msgstr ""
+
+#: ../../click/docs/advanced.rst:471
+msgid "If the resource isn't a context manager, usually it can be wrapped in one using something from :mod:`contextlib`. If that's not possible, use the context's :meth:`~click.Context.call_on_close` method to register a cleanup function."
+msgstr ""

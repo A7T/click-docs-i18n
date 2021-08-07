@@ -1,0 +1,197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Pallets
+# This file is distributed under the same license as the Click package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Click 8.0.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-07 10:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../click/docs/shell-completion.rst:4
+msgid "Shell Completion"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:6
+msgid "Click provides tab completion support for Bash (version 4.4 and up), Zsh, and Fish. It is possible to add support for other shells too, and suggestions can be customized at multiple levels."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:10
+msgid "Shell completion suggests command names, option names, and values for choice, file, and path parameter types. Options are only listed if at least a dash has been entered. Hidden commands and options are not shown."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:24
+msgid "Enabling Completion"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:26
+msgid "Completion is only available if a script is installed and invoked through an entry point, not through the ``python`` command. See :doc:`/setuptools`. Once the executable is installed, calling it with a special environment variable will put Click in completion mode."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:31
+msgid "In order for completion to be used, the user needs to register a special function with their shell. The script is different for every shell, and Click will output it when called with ``_{PROG_NAME}_COMPLETE`` set to ``{shell}_source``. ``{PROG_NAME}`` is the executable name in uppercase with dashes replaced by underscores. The built-in shells are ``bash``, ``zsh``, and ``fish``."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:38
+msgid "Provide your users with the following instructions customized to your program name. This uses ``foo-bar`` as an example."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:43
+#: ../../click/docs/shell-completion.rst:78
+msgid "Bash"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:45
+msgid "Add this to ``~/.bashrc``:"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:51
+#: ../../click/docs/shell-completion.rst:92
+msgid "Zsh"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:53
+msgid "Add this to ``~/.zshrc``:"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:59
+#: ../../click/docs/shell-completion.rst:106
+msgid "Fish"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:61
+msgid "Add this to ``~/.config/fish/completions/foo-bar.fish``:"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:67
+msgid "This is the same file used for the activation script method below. For Fish it's probably always easier to use that method."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:70
+msgid "Using ``eval`` means that the command is invoked and evaluated every time a shell is started, which can delay shell responsiveness. To speed it up, write the generated script to a file, then source that. You can generate the files ahead of time and distribute them with your program to save your users a step."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:80
+#: ../../click/docs/shell-completion.rst:94
+msgid "Save the script somewhere."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:86
+msgid "Source the file in ``~/.bashrc``."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:100
+msgid "Source the file in ``~/.zshrc``."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:108
+msgid "Save the script to ``~/.config/fish/completions/foo-bar.fish``:"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:114
+msgid "After modifying the shell config, you need to start a new shell in order for the changes to be loaded."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:119
+msgid "Custom Type Completion"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:121
+msgid "When creating a custom :class:`~click.ParamType`, override its :meth:`~click.ParamType.shell_complete` method to provide shell completion for parameters with the type. The method must return a list of :class:`~CompletionItem` objects. Besides the value, these objects hold metadata that shell support might use. The built-in implementations use ``type`` to indicate special handling for paths, and ``help`` for shells that support showing a help string next to a suggestion."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:129
+msgid "In this example, the type will suggest environment variables that start with the incomplete value."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:148
+msgid "Overriding Value Completion"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:150
+msgid "Value completions for a parameter can be customized without a custom type by providing a ``shell_complete`` function. The function is used instead of any completion provided by the type. It is passed 3 keyword arguments:"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:155
+msgid "``ctx`` - The current command context."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:156
+msgid "``param`` - The current parameter requesting completion."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:157
+msgid "``incomplete`` - The partial word that is being completed. May be an empty string if no characters have been entered yet."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:160
+msgid "It must return a list of :class:`CompletionItem` objects, or as a shortcut it can return a list of strings."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:163
+msgid "In this example, the command will suggest environment variables that start with the incomplete value."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:179
+msgid "Adding Support for a Shell"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:181
+msgid "Support can be added for shells that do not come built in. Be sure to check PyPI to see if there's already a package that adds support for your shell. This topic is very technical, you'll want to look at Click's source to study the built-in implementations."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:186
+msgid "Shell support is provided by subclasses of :class:`ShellComplete` registered with :func:`add_completion_class`. When Click is invoked in completion mode, it calls :meth:`~ShellComplete.source` to output the completion script, or :meth:`~ShellComplete.complete` to output completions. The base class provides default implementations that require implementing some smaller parts."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:193
+msgid "First, you'll need to figure out how your shell's completion system works and write a script to integrate it with Click. It must invoke your program with the environment variable ``_{PROG_NAME}_COMPLETE`` set to ``{shell}_complete`` and pass the complete args and incomplete value. How it passes those values, and the format of the completion response from Click is up to you."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:200
+msgid "In your subclass, set :attr:`~ShellComplete.source_template` to the completion script. The default implementation will perform ``%`` formatting with the following variables:"
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:204
+msgid "``complete_func`` - A safe name for the completion function defined in the script."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:206
+msgid "``complete_var`` - The environment variable name for passing the ``{shell}_complete`` instruction."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:208
+msgid "``prog_name`` - The name of the executable being completed."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:210
+msgid "The example code is for a made up shell \"My Shell\" or \"mysh\" for short."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:230
+msgid "Next, implement :meth:`~ShellComplete.get_completion_args`. This must get, parse, and return the complete args and incomplete value from the completion script. For example, for the Bash implementation the ``COMP_WORDS`` env var contains the command line args as a string, and the ``COMP_CWORD`` env var contains the index of the incomplete arg. The method must return a ``(args, incomplete)`` tuple."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:254
+msgid "Finally, implement :meth:`~ShellComplete.format_completion`. This is called to format each :class:`CompletionItem` into a string. For example, the Bash implementation returns ``f\"{item.type},{item.value}`` (it doesn't support help strings), and the Zsh implementation returns each part separated by a newline, replacing empty help with a ``_`` placeholder. This format is entirely up to what you parse with your completion script."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:262
+msgid "The ``type`` value is usually ``plain``, but it can be another value that the completion script can switch on. For example, ``file`` or ``dir`` can tell the shell to handle path completion, since the shell is better at that than Click."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:275
+msgid "With those three things implemented, the new shell support is ready. In case those weren't sufficient, there are more parts that can be overridden, but that probably isn't necessary."
+msgstr ""
+
+#: ../../click/docs/shell-completion.rst:279
+msgid "The activation instructions will again depend on how your shell works. Use the following to generate the completion script, then load it into the shell somehow."
+msgstr ""
