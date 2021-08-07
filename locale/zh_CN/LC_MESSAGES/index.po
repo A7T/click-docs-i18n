@@ -3,81 +3,81 @@
 # This file is distributed under the same license as the Click package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Click 8.0.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-07 10:39+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-08-07 17:16+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Last-Translator: A7T <argon@4rt.top>\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../click/docs/index.rst:4
 msgid "Welcome to Click"
-msgstr ""
+msgstr "来点 Click"
 
 #: ../../click/docs/index.rst:11
 msgid "Click is a Python package for creating beautiful command line interfaces in a composable way with as little code as necessary.  It's the \"Command Line Interface Creation Kit\".  It's highly configurable but comes with sensible defaults out of the box."
-msgstr ""
+msgstr "Click 是个 Python 包，可以用尽可能少的代码创建优雅的、组合式的命令行界面。属于“命令行界面创建工具”。它高度可配置，同时有合理的默认值，能够开箱即用。"
 
 #: ../../click/docs/index.rst:16
 msgid "It aims to make the process of writing command line tools quick and fun while also preventing any frustration caused by the inability to implement an intended CLI API."
-msgstr ""
+msgstr "它旨在让编写命令行工具的过程变得快速而有趣，避免因无法实现预期的 CLI API 而感到挫败。"
 
 #: ../../click/docs/index.rst:20
 msgid "Click in three points:"
-msgstr ""
+msgstr "Click 的三个特性："
 
 #: ../../click/docs/index.rst:22
 msgid "arbitrary nesting of commands"
-msgstr ""
+msgstr "任意嵌套命令"
 
 #: ../../click/docs/index.rst:23
 msgid "automatic help page generation"
-msgstr ""
+msgstr "自动生成帮助页面"
 
 #: ../../click/docs/index.rst:24
 msgid "supports lazy loading of subcommands at runtime"
-msgstr ""
+msgstr "支持在运行时延迟加载子命令"
 
 #: ../../click/docs/index.rst:26
 msgid "What does it look like?  Here is an example of a simple Click program:"
-msgstr ""
+msgstr "它看起来什么样呢？这是个简单的 Click 程序例子："
 
 #: ../../click/docs/index.rst:44
 msgid "And what it looks like when run:"
-msgstr ""
+msgstr "运行它的时候是这样："
 
 #: ../../click/docs/index.rst:50
 msgid "It automatically generates nicely formatted help pages:"
-msgstr ""
+msgstr "它会自动生成格式美观的帮助页面："
 
 #: ../../click/docs/index.rst:56
 msgid "You can get the library directly from PyPI::"
-msgstr ""
+msgstr "你可以直接从 PyPI 上获得这个库："
 
 #: ../../click/docs/index.rst:61
 msgid "Documentation"
-msgstr ""
+msgstr "文档"
 
 #: ../../click/docs/index.rst:63
 msgid "This part of the documentation guides you through all of the library's usage patterns."
-msgstr ""
+msgstr "文档的这些部分指引你贯通 Click 的所有使用模式。"
 
 #: ../../click/docs/index.rst:88
 msgid "API Reference"
-msgstr ""
+msgstr "API 参考"
 
 #: ../../click/docs/index.rst:90
 msgid "If you are looking for information on a specific function, class, or method, this part of the documentation is for you."
-msgstr ""
+msgstr "要找到某个特定的函数、类或者方法的信息，请查阅文档的如下部分。"
 
 #: ../../click/docs/index.rst:99
 msgid "Miscellaneous Pages"
-msgstr ""
-
+msgstr "杂项"
